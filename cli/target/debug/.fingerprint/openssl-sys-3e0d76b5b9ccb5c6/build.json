@@ -1,1 +1,0 @@
-{"rustc":0,"features":"","target":0,"profile":0,"deps":[],"local":[{"EnvBased":["OPENSSL_LIB_DIR",null]},{"EnvBased":["OPENSSL_INCLUDE_DIR",null]},{"EnvBased":["OPENSSL_DIR",null]}],"rustflags":[]}
