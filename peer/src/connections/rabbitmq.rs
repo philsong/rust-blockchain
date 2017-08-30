@@ -1,9 +1,10 @@
-use amqp::Session;
-use amqp::Channel;
+use amqp::{Channel, Session};
 
 pub fn init_rabbitmq() -> Channel {
-    let session = Session::open_url("amqp:://localhost/").unwrap();
-    let channel = session.open_channel(1).unwrap();
+    let mut session: Session = match Session::open_url("amqp://localhost//") {
+        Ok(session) => session,
+        Err(error) => panic!("Error during RabbitMQ connection. {}", error),
+    };
 
-    channel
+    session.open_channel(1).unwrap()
 }

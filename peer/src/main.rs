@@ -23,6 +23,8 @@ fn main() {
 }
 
 fn rocket() -> rocket::Rocket {
+    let channel = connections::init_rabbitmq();
+
     rocket::ignite()
         .manage(connections::init_postgres())
         .mount(
